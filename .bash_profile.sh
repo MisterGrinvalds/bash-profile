@@ -1,25 +1,25 @@
-export $DOTFILES="$HOME/.dotfiles"
+export DOTFILES="$HOME/.dotfiles"
 
-if [ -f $DOTFILES/.bash_profile.sh_aliases ]; then
-    . $DOTFILES/.bash_profile.sh_aliases
+if [ -f $DOTFILES/.bash_profile_aliases.sh ]; then
+    . $DOTFILES/.bash_profile_aliases.sh
 fi
 
-if [ -f $DOTFILES/.bash_profile.sh_environment ]; then
-    . $DOTFILES/.bash_profile.sh_environment
+if [ -f $DOTFILES/.bash_profile_environment.sh ]; then
+    . $DOTFILES/.bash_profile_environment.sh
 fi
 
-if [ -f $DOTFILES/.bash_profile.sh_git ]; then
-    . $DOTFILES/.bash_profile.sh_git
+if [ -f $DOTFILES/.bash_profile_git.sh ]; then
+    . $DOTFILES/.bash_profile_git.sh
 fi
 
-if [ -f $DOTFILES/.bash_profile.sh_terminal ]; then
-    . $DOTFILES/.bash_profile.sh_terminal
+if [ -f $DOTFILES/.bash_profile_terminal.sh ]; then
+    . $DOTFILES/.bash_profile_terminal.sh
 fi
 
-if [ -f $DOTFILES/.bash_profile.sh_tools ]; then
-    . $DOTFILES/.bash_profile.sh_tools
+if [ -f $DOTFILES/.bash_profile_tools.sh ]; then
+    . $DOTFILES/.bash_profile_tools.sh
 fi
 
-if [ -f $DOTFILES/.secure/.bash_profile.sh_secure ]; then
-    . $DOTFILES/.secure/.bash_profile.sh_secure
+if [ -f $DOTFILES/.secure/.bash_profile_secure.sh ]; then
+    . $DOTFILES/.secure/.bash_profile_secure.sh
 fi
