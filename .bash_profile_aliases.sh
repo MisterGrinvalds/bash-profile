@@ -1,4 +1,5 @@
-alias pip='python -m pip'
+alias pip='python -m pip'                                                       # Alias for `pip`
+alias pip3='python3 -m pip'                                                     # Alias for `pip3`
 alias resource='source ~/.bash_profile'                                         # Source bash_profile
 alias ll='ls -alh'                                                              # List files
 alias llr='ls -alhr'                                                            # List files (reverse)

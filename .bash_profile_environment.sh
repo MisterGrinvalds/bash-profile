@@ -1,5 +1,3 @@
-# System variables in OSX are handled by using a .plist, see .docs/environment.plist
-
 # Symbolic Links
 if [ ! -L "/Library/Frameworks/R.framework/Resources/etc/Rprofile.site" ]; then
     ln -s "$DOTFILES/.R/Rprofile.site" "/Library/Frameworks/R.framework/Resources/etc/"
