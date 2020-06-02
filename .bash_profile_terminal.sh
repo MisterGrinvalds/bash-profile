@@ -23,21 +23,21 @@ function git_branch {
 
   if [[ $git_status =~ $on_branch ]]; then
     local branch=${BASH_REMATCH[1]}
-    echo "$branch"
+    echo "[$branch]"
   elif [[ $git_status =~ $on_commit ]]; then
     local commit=${BASH_REMATCH[1]}
-    echo "$commit"
+    echo "[$commit]"
   fi
 }
 
 function git_color {
   local git_status="$(git status 2> /dev/null)"
 
-  if [[ ! $git_status =~ "working directory clean" ]]; then
-    echo -e $RED
-  elif [[ $git_status =~ "Your branch is ahead of" ]]; then
+  if [[ $git_status =~ "nothing added to commit but untracked files present" ]]; then
     echo -e $YELLOW
-  elif [[ $git_status =~ "nothing to commit" ]]; then
+   elif [[ $git_status =~ "Your branch is ahead of" ]]; then
+    echo -e $RED
+  elif [[ $git_status =~ "nothing to commit, working tree clean" ]]; then
     echo -e $GREEN
   else
     echo -e $WHITE
@@ -51,7 +51,7 @@ PS1+=$WHITE' → '
 PS1+=$CYAN'\u'$WHITE' on '$BLUE'\h'                                 # Prompt: Machine
 PS1+=$WHITE' → '
 PS1+=$PURPLE'[\w]'                                                  # Prompt: Directory
-PS1+='$(git_color)[$(git_branch)]'                          # Prompt: Git
+PS1+='$(git_color)$(git_branch)'                          # Prompt: Git
 PS1+=$WHITE'\n\$ '
 export PS1
 export LSCOLORS=fxgxexcxbxegxgxbxbxfxf                              # Color `ls` targets
