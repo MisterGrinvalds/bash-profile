@@ -1,3 +1,4 @@
+alias python=/usr/local/bin/python3
 alias pip='python -m pip'                                                       # Alias for `pip`
 alias pip3='python3 -m pip'                                                     # Alias for `pip3`
 alias resource='source ~/.bash_profile'                                         # Source bash_profile
