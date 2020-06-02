@@ -1,6 +1,7 @@
 alias pip='python -m pip'                                                       # Alias for `pip`
 alias pip3='python3 -m pip'                                                     # Alias for `pip3`
 alias resource='source ~/.bash_profile'                                         # Source bash_profile
+alias getsshkey="pbcopy < ~/.ssh/id_rsa.pub"                                    # Copy SSH key to the keyboard
 alias ll='ls -alh'                                                              # List files
 alias llr='ls -alhr'                                                            # List files (reverse)
 alias lls='ls -alhS'                                                            # List files by size
@@ -16,7 +17,6 @@ alias tree="\
     grep ":$" | \
     sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'\
     "                                                                           # List the file structure of the current directory
-alias getsshkey="pbcopy < ~/.ssh/id_rsa.pub"                                    # Copy SSH key to the keyboard
 alias home='clear && cd ~ && ll'                                                # Home directory
 alias "c=xclip"                                                                 # copy to X clipboard (register *)
 alias "cs=xclip -selection clipboard"                                           # copy to system wide clipboard (register +)
