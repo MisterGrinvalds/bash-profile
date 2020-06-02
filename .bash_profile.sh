@@ -1,23 +1,19 @@
-if [ -f ~/.dotfiles/.bash_profile_environment.sh ]; then
-    . ~/.dotfiles/.bash_profile_environment.sh
+if [ -f ~/.dotfiles/.bash_profile/environment.sh ]; then
+    . ~/.dotfiles/.bash_profile/environment.sh
 fi
 
-if [ -f $DOTFILES/.bash_profile_aliases.sh ]; then
-    . $DOTFILES/.bash_profile_aliases.sh
+if [ -f $DOTFILES/.bash_profile/aliases.sh ]; then
+    . $DOTFILES/.bash_profile/aliases.sh
 fi
 
-if [ -f $DOTFILES/.bash_profile_git.sh ]; then
-    . $DOTFILES/.bash_profile_git.sh
+if [ -f $DOTFILES/.bash_profile/terminal.sh ]; then
+    . $DOTFILES/.bash_profile/terminal.sh
 fi
 
-if [ -f $DOTFILES/.bash_profile_terminal.sh ]; then
-    . $DOTFILES/.bash_profile_terminal.sh
+if [ -f $DOTFILES/.bash_profile/tools.sh ]; then
+    . $DOTFILES/.bash_profile/tools.sh
 fi
 
-if [ -f $DOTFILES/.bash_profile_tools.sh ]; then
-    . $DOTFILES/.bash_profile_tools.sh
-fi
-
-if [ -f $DOTFILES/.secure/.bash_profile_secure.sh ]; then
-    . $DOTFILES/.secure/.bash_profile_secure.sh
+if [ -f $DOTFILES/.secure/.bash_profile/secure.sh ]; then
+    . $DOTFILES/.secure/.bash_profile/secure.sh
 fi
