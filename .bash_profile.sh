@@ -1,11 +1,9 @@
-export DOTFILES="$HOME/.dotfiles"
+if [ -f $DOTFILES/.bash_profile_environment.sh ]; then
+    . $DOTFILES/.bash_profile_environment.sh
+fi
 
 if [ -f $DOTFILES/.bash_profile_aliases.sh ]; then
     . $DOTFILES/.bash_profile_aliases.sh
-fi
-
-if [ -f $DOTFILES/.bash_profile_environment.sh ]; then
-    . $DOTFILES/.bash_profile_environment.sh
 fi
 
 if [ -f $DOTFILES/.bash_profile_git.sh ]; then

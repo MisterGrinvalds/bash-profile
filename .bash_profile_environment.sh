@@ -1,3 +1,13 @@
+# All Machines
+export DOTFILES="$HOME/.dotfiles"
+export GIT_CONFIG="$DOTFILES/.gitconfig"
+export IPYTHONDIR="$DOTFILES/.ipython"
+export JUPYTER_CONFIG_DIR="$DOTFILES/.jupyter"
+export KAGGLE_CONFIG_DIR="$DOTFILES/.kaggle"
+export R_PROFILE="$DOTFILES/.R/Rprofile.site"
+export R_PROFILE_USER="$DOTFILES/.R/.Rprofile"
+export XDG_CONFIG_HOME="$DOTFILES"
+
 # Machine-Specific
 export MACHINE_NAME="Ross-MBP"
 if [ "$HOSTNAME" = "$MACHINE_NAME" ]; then
@@ -14,13 +24,3 @@ if [ "$HOSTNAME" = "$MACHINE_NAME" ]; then
     export XDG_CACHE_HOME="$HOME/Library/Caches"
     export NVIM_LOG_FILE="$HOME/Library/Application Support"
 fi
-
-# All Machines
-export GIT_CONFIG="$DOTFILES/.gitconfig"
-export IPYTHONDIR="$DOTFILES/.ipython"
-export JUPYTER_CONFIG_DIR="$DOTFILES/.jupyter"
-export KAGGLE_CONFIG_DIR="$DOTFILES/.kaggle"
-export R_PROFILE="$DOTFILES/.R/Rprofile.site"
-export R_PROFILE_USER="$DOTFILES/.R/.Rprofile"
-export XDG_CONFIG_HOME="$DOTFILES"
-
