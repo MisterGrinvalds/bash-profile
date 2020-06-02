@@ -12,7 +12,11 @@ alias lldc='ls -alhtU'                                                          
 alias lldcr='ls -alhtUr'                                                        # List files by date created (reverse)
 alias perm="stat -f '%Lp'"                                                      # View the permissions of a file/dir as a number
 alias mkdir='mkdir -pv'                                                         # Make parent directories if needed
-alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"             # List the file structure of the current directory
+alias tree="\
+    ls -R |\
+    grep ":$" | \
+    sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'\
+    "                                                                           # List the file structure of the current directory
 alias getsshkey="pbcopy < ~/.ssh/id_rsa.pub"                                    # Copy SSH key to the keyboard
 alias home='clear && cd ~ && ll'                                                # Home directory
 alias downloads='clear && cd ~/Downloads && ll'                                 # Downloads directory
