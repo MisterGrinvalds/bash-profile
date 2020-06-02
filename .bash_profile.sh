@@ -1,5 +1,5 @@
-if [ -f $DOTFILES/.bash_profile_environment.sh ]; then
-    . $DOTFILES/.bash_profile_environment.sh
+if [ -f ~/.dotfiles/.bash_profile_environment.sh ]; then
+    . ~/.dotfiles/.bash_profile_environment.sh
 fi
 
 if [ -f $DOTFILES/.bash_profile_aliases.sh ]; then
