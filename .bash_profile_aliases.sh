@@ -1,4 +1,3 @@
-alias python=/usr/local/bin/python3
 alias pip='python -m pip'                                                       # Alias for `pip`
 alias pip3='python3 -m pip'                                                     # Alias for `pip3`
 alias resource='source ~/.bash_profile'                                         # Source bash_profile
@@ -19,7 +18,6 @@ alias tree="\
     "                                                                           # List the file structure of the current directory
 alias getsshkey="pbcopy < ~/.ssh/id_rsa.pub"                                    # Copy SSH key to the keyboard
 alias home='clear && cd ~ && ll'                                                # Home directory
-alias downloads='clear && cd ~/Downloads && ll'                                 # Downloads directory
 alias "c=xclip"                                                                 # copy to X clipboard (register *)
 alias "cs=xclip -selection clipboard"                                           # copy to system wide clipboard (register +)
 alias "v=xclip -o"                                                              # output copied content (paste)
@@ -27,7 +25,3 @@ alias "vs=xclip -o -selection clipboard"                                        
 alias ..='cl ..'
 alias ...='cl ../../'
 alias ....='cl ../../../'
-alias .....='cl ../../../../'
-alias ......='cl ../../../../'
-alias .......='cl ../../../../../'
-alias ........='cl ../../../../../../'
