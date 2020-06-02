@@ -1,4 +1,3 @@
-# Set colors to variables
 BLACK="\[\033[0;30m\]"
 BLACKB="\[\033[1;30m\]"
 RED="\[\033[0;31m\]"
@@ -17,61 +16,42 @@ WHITE="\[\033[0;37m\]"
 WHITEB="\[\033[1;37m\]"
 RESET="\[\033[0;0m\]"
 
-# Set tab name to the current directory
-export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
+function git_branch {
+  local git_status="$(git status 2> /dev/null)"
+  local on_branch="On branch ([^${IFS}]*)"
+  local on_commit="HEAD detached at ([^${IFS}]*)"
 
-# Add color to terminal
-export CLICOLOR=1
-export LSCOLORS=GxExBxBxFxegedabagacad
-
-# Print the date
-date '+%H:%M:%S %p / %A / %B %-d, %Y'
-
-# Get Git branch of current directory
-git_branch () {
-    if git rev-parse --git-dir >/dev/null 2>&1
-        # then echo -e "" git:\($(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')\)
-        then echo -e "" \[$(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')\]
-    else
-        echo ""
-    fi
+  if [[ $git_status =~ $on_branch ]]; then
+    local branch=${BASH_REMATCH[1]}
+    echo "($branch)"
+  elif [[ $git_status =~ $on_commit ]]; then
+    local commit=${BASH_REMATCH[1]}
+    echo "($commit)"
+  fi
 }
 
-# Set a specific color for the status of the Git repo
-git_color() {
-    local STATUS=`git status 2>&1`
-    if [[ "$STATUS" == *'Not a git repository'* ]]
-        then echo "" # nothing
-    else
-        if [[ "$STATUS" != *'working tree clean'* ]]
-            then echo -e '\033[0;31m' # red if need to commit
-        else
-            if [[ "$STATUS" == *'Your branch is ahead'* ]]
-                then echo -e '\033[0;33m' # yellow if need to push
-            else
-                echo -e '\033[0;32m' # else green
-            fi
-        fi
-    fi
+function git_color {
+  local git_status="$(git status 2> /dev/null)"
+
+  if [[ ! $git_status =~ "working directory clean" ]]; then
+    echo -e $RED
+  elif [[ $git_status =~ "Your branch is ahead of" ]]; then
+    echo -e $YELLOW
+  elif [[ $git_status =~ "nothing to commit" ]]; then
+    echo -e $GREEN
+  else
+    echo -e $WHITE
+  fi
 }
 
-# Modify the prompt - Spacegray
-export PS1=$CYAN'\u'$WHITE' at '$BLUE'\h'$WHITE' → '$PURPLE'[\w]\e[0m$(git_color)$(git_branch)\n'$WHITE'\$ '
-
-# Shorten a Github URL with git.io (https://github.com/blog/985-git-io-github-url-shortener)
-gitio() {
-    # Check for a URL
-    if [ -z "$1" ]; then
-        echo "You need to supply a URL to shorten..."
-        return
-    fi
-
-    # Check for a code
-    if [ -z "$2" ]; then
-        echo "You need to supply a name for your shortened URL..."
-        return
-    fi
-
-    curl -i https://git.io -F "url=$1" -F "code=$2"
-    printf "\n"
-}
+export CLICOLOR=1                                                   # Allow colors
+export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'            # Set tab name
+PS1=$WHITE'\D{%F %T}'                                               # Prompt: Date
+PS1+=$WHITE' → '
+PS1+=$CYAN'\u'$WHITE' on '$BLUE'\h'                                 # Prompt: Machine
+PS1+=$WHITE' → '
+PS1+=$PURPLE'[\w]'                                                  # Prompt: Directory
+PS1+=$(git_color)'[\e0m'$(git_branch)']\n'                          # Prompt: Git
+PS1+=$WHITE'\$ '
+export PS1
+export LSCOLORS=fxgxexcxbxegxgxbxbxfxf                              # Color `ls` targets
