@@ -35,9 +35,13 @@ function git_color {
 
   if [[ $git_status =~ "nothing added to commit but untracked files present" ]]; then
     echo -e $YELLOW
-   elif [[ $git_status =~ "Your branch is ahead of" ]]; then
+  elif [[ $git_status =~ "no changes added to commit" ]]; then
+    echo -e $YELLOW
+  elif [[ $git_status =~ "Your branch is ahead of" ]]; then
     echo -e $RED
-  elif [[ $git_status =~ "nothing to commit, working tree clean" ]]; then
+  elif [[ $git_status =~ "Changes to be committed" ]]; then
+    echo -e $RED
+   elif [[ $git_status =~ "nothing to commit, working tree clean" ]]; then
     echo -e $GREEN
   else
     echo -e $WHITE
