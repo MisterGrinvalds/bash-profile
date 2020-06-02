@@ -1,3 +1,4 @@
+cd() { builtin cd "$@" && ll; }                                             # Always `ll` after a `cd`
 mktar() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }                          # Creates a *.tar.gz archive of a file or folder
 mkzip() { zip -r "${1%%/}.zip" "$1" ; }                                     # Create a *.zip archive of a file or folder
 bash-as() { sudo -u $1 /bin/bash; }                                         # Run a bash shell as another user

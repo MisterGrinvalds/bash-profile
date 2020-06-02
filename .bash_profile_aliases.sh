@@ -17,7 +17,7 @@ alias tree="\
     grep ":$" | \
     sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'\
     "                                                                           # List the file structure of the current directory
-alias home='clear && cd ~ && ll'                                                # Home directory
+alias home='clear && cd ~'                                                      # Home directory
 alias "c=xclip"                                                                 # copy to X clipboard (register *)
 alias "cs=xclip -selection clipboard"                                           # copy to system wide clipboard (register +)
 alias "v=xclip -o"                                                              # output copied content (paste)
