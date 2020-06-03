@@ -2,7 +2,7 @@
 export DOTFILES="$HOME/.dotfiles"
 export IPYTHONDIR="$DOTFILES/.ipython"
 export JUPYTER_CONFIG_DIR="$DOTFILES/.jupyter"
-export KAGGLE_CONFIG_DIR="$DOTFILES/.kaggle"
+export KAGGLE_CONFIG_DIR="$DOTFILES/.secure/.kaggle"
 export R_PROFILE="$DOTFILES/.R/Rprofile.site"
 export R_PROFILE_USER="$DOTFILES/.R/.Rprofile"
 export XDG_CONFIG_HOME="$DOTFILES"
