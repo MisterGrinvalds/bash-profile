@@ -1,4 +1,4 @@
-# All Machines
+# DOTFILES Dependent
 export DOTFILES="$HOME/.dotfiles"
 export IPYTHONDIR="$DOTFILES/.ipython"
 export JUPYTER_CONFIG_DIR="$DOTFILES/.jupyter"
@@ -10,7 +10,7 @@ if [ ! -L "$HOME/.gitconfig" ]; then
     ln -s "$DOTFILES/.gitconfig" "$HOME/"
 fi
 
-# Machine-Specific
+# Machine Dependent
 export MACHINE_NAME="Ross-MBP"
 if [ "$HOSTNAME" = "$MACHINE_NAME" ]; then
     # RStudio Hack to force it to use .dotfiles configuration
@@ -26,3 +26,6 @@ if [ "$HOSTNAME" = "$MACHINE_NAME" ]; then
     export XDG_CACHE_HOME="$HOME/Library/Caches"
     export NVIM_LOG_FILE="$HOME/Library/Application Support"
 fi
+
+# XDG_CONFIG Dependent
+
