@@ -28,4 +28,6 @@ if [ "$HOSTNAME" = "$MACHINE_NAME" ]; then
 fi
 
 # XDG_CONFIG Dependent
+export HISTFILE="$XDG_CACHE_HOME"
+export PYTHONHISTFILE="$XDG_CACHE_HOME"
 
