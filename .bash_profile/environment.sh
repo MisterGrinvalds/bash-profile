@@ -3,6 +3,7 @@ export DOTFILES="$HOME/.dotfiles"
 export IPYTHONDIR="$DOTFILES/.ipython"
 export JUPYTER_CONFIG_DIR="$DOTFILES/.jupyter"
 export KAGGLE_CONFIG_DIR="$DOTFILES/.secure/.kaggle"
+export PYTHONSTARTUP="$DOTFILES/.python/startup.py"
 export R_PROFILE="$DOTFILES/.R/Rprofile.site"
 export R_PROFILE_USER="$DOTFILES/.R/.Rprofile"
 export XDG_CONFIG_HOME="$DOTFILES"
@@ -29,5 +30,4 @@ fi
 
 # XDG_CONFIG Dependent
 export HISTFILE="$XDG_CACHE_HOME"
-export PYTHONHISTFILE="$XDG_CACHE_HOME"
 
