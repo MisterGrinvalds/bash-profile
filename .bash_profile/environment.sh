@@ -11,7 +11,7 @@ if [ ! -L "$HOME/.gitconfig" ]; then
 fi
 
 # Machine Dependent
-export MACHINE_NAME="Ross-MBP"
+export MACHINE_NAME="Ross-Macbook-Pro.local"
 if [ "$HOSTNAME" = "$MACHINE_NAME" ]; then
     # RStudio Hack to force it to use .dotfiles configuration
     if [ ! -L "/Library/Frameworks/R.framework/Resources/etc/Rprofile.site" ]; then
