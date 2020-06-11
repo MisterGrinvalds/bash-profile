@@ -3,7 +3,7 @@ export DOTFILES="$HOME/.dotfiles"
 export IPYTHONDIR="$DOTFILES/.ipython"
 export JUPYTER_CONFIG_DIR="$DOTFILES/.jupyter"
 export KAGGLE_CONFIG_DIR="$DOTFILES/.secure/.kaggle"
-export NPM_CONFIG_USERCONFIG="$DOTFILES"
+export NPM_CONFIG_USERCONFIG="$DOTFILES/.npmrc"
 export PYTHONSTARTUP="$DOTFILES/.python/startup.py"
 export R_PROFILE="$DOTFILES/.R/Rprofile.site"
 export R_PROFILE_USER="$DOTFILES/.R/.Rprofile"
@@ -25,9 +25,10 @@ if [ "$HOSTNAME" = "$MACHINE_NAME" ]; then
         cp "$DOTFILES/.docs/fzdefaults.xml" /Applications/FileZilla.app/Contents/SharedSupport
     fi
 
+    export NPM_CONFIG_GLOBALCONFIG="$DOTFILES/.npm/npmrc"
+    export NVIM_LOG_FILE="$HOME/Library/Application Support"
     export XDG_DATA_HOME="$HOME/Library/Application Support"
     export XDG_CACHE_HOME="$HOME/Library/Caches"
-    export NVIM_LOG_FILE="$HOME/Library/Application Support"
 fi
 
 # XDG_CONFIG Dependent
