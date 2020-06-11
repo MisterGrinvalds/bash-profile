@@ -9,9 +9,6 @@ export R_PROFILE="$DOTFILES/.R/Rprofile.site"
 export R_PROFILE_USER="$DOTFILES/.R/.Rprofile"
 export VIM_PLUGGED="$DOTFILES/nvim/plugged"
 export XDG_CONFIG_HOME="$DOTFILES"
-if [ ! -L "$HOME/.gitconfig" ]; then
-    ln -s "$DOTFILES/.gitconfig" "$HOME/"
-fi
 
 # Machine Dependent
 export MACHINE_NAME="Ross-Macbook-Pro.local"
