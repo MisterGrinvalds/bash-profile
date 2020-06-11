@@ -30,5 +30,6 @@ fi
 
 # XDG_CONFIG Dependent
 export HISTFILE="$XDG_CACHE_HOME"
+export NEOVIM_VIRTUALENV="$XDG_CONFIG_HOME/nvim/env"
 export VIM_PLUGGED="$XDG_CONFIG_HOME/nvim/plugged"
 
