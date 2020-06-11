@@ -24,6 +24,7 @@ if [ "$HOSTNAME" = "$MACHINE_NAME" ]; then
 
     export NPM_CONFIG_GLOBALCONFIG="$DOTFILES/.npm/npmrc"
     export NVIM_LOG_FILE="$HOME/Library/Application Support"
+    export SHELL_SESSION_HISTORY=0
     export XDG_DATA_HOME="$HOME/Library/Application Support"
     export XDG_CACHE_HOME="$HOME/Library/Caches"
 fi
