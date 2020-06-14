@@ -56,6 +56,6 @@ PS1+=$CYAN'\u'$WHITE' on '$BLUE'\h'                                 # Prompt: Ma
 PS1+=$WHITE' → '
 PS1+=$PURPLE'[\w]'                                                  # Prompt: Directory
 PS1+='$(git_color)$(git_branch)'                          # Prompt: Git
-PS1+=$WHITE'\n\$ '
+PS1+=$WHITE'\n\$ \e[0m'
 export PS1
 export LSCOLORS=fxgxexcxbxegxgxbxbxfxf                              # Color `ls` targets
