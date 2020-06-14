@@ -11,12 +11,12 @@ export R_PROFILE_USER="$DOTFILES/.R/.Rprofile"
 export XDG_CONFIG_HOME="$DOTFILES"
 
 # OS Dependent
-if [ "$OSTYPE" = "darwin"* ]; then
+if [[ "$OSTYPE" = "darwin"* ]]; then
 	if [ -f $DOTFILES/.bash_profile/environment_darwin.sh ]; then
     . $DOTFILES/.bash_profile/environment_darwin.sh
 	fi
 
-elif [ "$OSTYPE" = "linux-gnu" ]; then
+elif [[ "$OSTYPE" = "linux-gnu" ]]; then
 	if [ -f $DOTFILES/.bash_profile/environment_linux-gnu.sh ]; then
     . $DOTFILES/.bash_profile/environment_linux-gnu.sh
 	fi
@@ -26,5 +26,7 @@ fi
 ## XDG_CONFIG Dependent
 export HISTFILE="$XDG_CACHE_HOME"
 export NEOVIM_VIRTUALENV="$XDG_CONFIG_HOME/nvim/env"
+export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/.npm"
+export NPM_CONFIG_CACHE="$XDG_CACHE_HOME"
 export NVIM_LOG_FILE="$XDG_CACHE_HOME"
 export VIM_PLUGGED="$XDG_CONFIG_HOME/nvim/plugged"
