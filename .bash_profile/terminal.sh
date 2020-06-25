@@ -1,20 +1,20 @@
-BLACK="\033[0;30m"
-BLACKB="\033[1;30m"
-RED="\033[0;31m"
-REDB="\033[1;31m"
-GREEN="\033[0;32m"
-GREENB="\033[1;32m"
-YELLOW="\033[0;33m"
-YELLOWB="\033[1;33m"
-BLUE="\033[0;34m"
-BLUEB="\033[1;34m"
-PURPLE="\033[0;35m"
-PURPLEB="\033[1;35m"
-CYAN="\033[0;36m"
-CYANB="\033[1;36m"
-WHITE="\033[0;37m"
-WHITEB="\033[1;37m"
-RESET="\033[0;0m"
+BLACK="\001\033[0;30m\002"
+BLACKB="\001\033[1;30m\002"
+RED="\001\033[0;31m\002"
+REDB="\001\033[1;31m\002"
+GREEN="\001\033[0;32m\002"
+GREENB="\001\033[1;32m\002"
+YELLOW="\001\033[0;33m\002"
+YELLOWB="\001\033[1;33m\002"
+BLUE="\001\033[0;34m\002"
+BLUEB="\001\033[1;34m\002"
+PURPLE="\001\033[0;35m\002"
+PURPLEB="\001\033[1;35m\002"
+CYAN="\001\033[0;36m\002"
+CYANB="\001\033[1;36m\002"
+WHITE="\001\033[0;37m\002"
+WHITEB="\001\033[1;37m\002"
+RESET="\001\033[0;0m\002"
 
 function git_branch {
   local git_status="$(git status 2> /dev/null)"
@@ -49,13 +49,12 @@ function git_color {
 }
 
 export CLICOLOR=1                                                   # Allow colors
-export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'            # Set tab name
 PS1=$WHITE'\D{%F %T}'                                               # Prompt: Date
 PS1+=$WHITE' → '
 PS1+=$CYAN'\u'$WHITE' on '$BLUE'\h'                                 # Prompt: Machine
 PS1+=$WHITE' → '
 PS1+=$PURPLE'[\w]'                                                  # Prompt: Directory
-PS1+='$(git_color)$(git_branch)'                          # Prompt: Git
-PS1+=$WHITE'\n\$ \e[0m'
+PS1+='$(git_color)$(git_branch)'																		# Prompt: Git
+PS1+=$WHITE'\n\$ '$RESET
 export PS1
 export LSCOLORS=fxgxexcxbxegxgxbxbxfxf                              # Color `ls` targets
