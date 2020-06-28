@@ -3,7 +3,9 @@ if [[ "$OSTYPE" = "darwin"* || "$OSTYPE" = "linux-gnu" ]]; then
 		mkdir $HOME/.dotfiles
 	fi
 	
-	cp -r .bash_profile.sh  .bash_profile .bash_tools $HOME/.dotfiles/
+	export DOTFILES="$HOME/.dotfiles"
+	
+	rsync -avr --exclude=".doc*" --exclude=".git*" --exclude="initialize.sh" --exclude="README.md" ./ "$DOTFILES"
 	
 	if [ -e "$HOME/.bash_profile" ]; then
 		rm -f "$HOME/.bash_profile"
@@ -13,6 +15,6 @@ if [[ "$OSTYPE" = "darwin"* || "$OSTYPE" = "linux-gnu" ]]; then
 		rm -f "$HOME/.bashrc"
 	fi
 	
-	ln $HOME/.dotfiles/.bash_profile.sh $HOME/.bash_profile
+	ln $DOTFILES/.bash_profile.sh $HOME/.bash_profile
 
 fi
