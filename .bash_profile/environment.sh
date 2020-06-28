@@ -24,7 +24,6 @@ elif [[ "$OSTYPE" = "linux-gnu" ]]; then
 fi
 
 ## XDG_CONFIG Dependent
-export HISTFILE="$XDG_CACHE_HOME"
 export NEOVIM_VIRTUALENV="$XDG_CONFIG_HOME/nvim/env"
 export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/.npm"
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME"
