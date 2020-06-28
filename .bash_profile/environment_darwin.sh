@@ -6,6 +6,9 @@ if [ ! -d /Applications/FileZilla.app ]; then
 		cp "$DOTFILES/.docs/fzdefaults.xml" /Applications/FileZilla.app/Contents/SharedSupport
 fi
 
-export SHELL_SESSION_HISTORY=0
+export HISTCONTROL=$HISTCONTROL:erasedups:ignoredups:ignorespace
+export HISTFILE="$HOME/.bash_history"
+export HISTFILESIZE=3000               
+export HISTSIZE=3000                   
 export XDG_CACHE_HOME="$HOME/Library/Caches"
 export XDG_DATA_HOME="$HOME/Library/Application Support"
