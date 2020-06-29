@@ -19,10 +19,10 @@ alias tree="\
     sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'\
     "                                                                           # List the file structure of the current directory
 alias home='clear && cd ~'                                                      # Home directory
-alias "c=xclip"                                                                 # copy to X clipboard (register *)
-alias "cs=xclip -selection clipboard"                                           # copy to system wide clipboard (register +)
-alias "v=xclip -o"                                                              # output copied content (paste)
-alias "vs=xclip -o -selection clipboard"                                        # paste from system wide clipboard (equivalent to `v -selection clipboard`)
+alias c="xclip"                                                                 # copy to X clipboard (register *)
+alias cs="xclip -selection clipboard"                                           # copy to system wide clipboard (register +)
+alias v="xclip -o"                                                              # output copied content (paste)
+alias vs="xclip -o -selection clipboard"                                        # paste from system wide clipboard (equivalent to `v -selection clipboard`)
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
