@@ -11,6 +11,10 @@ Tools provides a place for custom functions and implementations of third-party t
 
 # Installation
 
+1. Clone this repository
+2. Change into its directory
+3. Execute `initialize.sh`
+
 ## Installed Tools
 - bash-completion
 - fd 
@@ -18,19 +22,3 @@ Tools provides a place for custom functions and implementations of third-party t
 - xquartz (Mac OS)
 - xclip (Mac OS)
 
-## Mac OSX
-```
-brew update
-brew cask install xquartz
-brew install bash-completion fd fzf xclip
-cd <this-repo>
-./initialize.sh
-```
-
-## Ubuntu 19.*+
-```
-sudo apt-get update
-sudo apt-get install bash-completion fd-find fzf
-cd <this-repo>
-./initialize.sh
-```
