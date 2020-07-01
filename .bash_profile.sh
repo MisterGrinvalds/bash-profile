@@ -6,6 +6,10 @@ if [ -f $DOTFILES/.bash_profile/aliases.sh ]; then
     . $DOTFILES/.bash_profile/aliases.sh
 fi
 
+if [ -f $DOTFILES/.bash_profile/conda.sh ]; then
+    . $DOTFILES/.bash_profile/conda.sh
+fi
+
 if [ -f $DOTFILES/.bash_profile/terminal.sh ]; then
     . $DOTFILES/.bash_profile/terminal.sh
 fi
