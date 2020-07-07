@@ -1,5 +1,6 @@
 # DOTFILES Dependent
 export DOTFILES="$HOME/.dotfiles"
+export CONDARC="$DOTFILES/.condarc"
 export IPYTHONDIR="$DOTFILES/.ipython"
 export JUPYTER_CONFIG_DIR="$DOTFILES/.jupyter"
 export KAGGLE_CONFIG_DIR="$DOTFILES/.secure/.kaggle"
@@ -28,4 +29,5 @@ export NEOVIM_VIRTUALENV="$XDG_CONFIG_HOME/nvim/env"
 export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/.npm"
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME"
 export NVIM_LOG_FILE="$XDG_CACHE_HOME"
+[[ ":$PATH:" != *":$NEOVIM_VIRTUALENV/bin:"* ]] && PATH="${PATH}:$NEOVIM_VIRTUALENV/bin"
 export VIM_PLUGGED="$XDG_CONFIG_HOME/nvim/plugged"
