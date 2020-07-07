@@ -1,5 +1,6 @@
 # DOTFILES Dependent
 export DOTFILES="$HOME/.dotfiles"
+export CONDARC="$DOTFILES/.condarc"
 export IPYTHONDIR="$DOTFILES/.ipython"
 export JUPYTER_CONFIG_DIR="$DOTFILES/.jupyter"
 export KAGGLE_CONFIG_DIR="$DOTFILES/.secure/.kaggle"
