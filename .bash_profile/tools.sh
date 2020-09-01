@@ -1,8 +1,4 @@
 # Load Tools
-if [ -f $DOTFILES/.bash_tools/fzf.sh ]; then
-    . $DOTFILES/.bash_tools/fzf.sh
-fi
-
 if [ -f /usr/local/etc/bash_completion ]; then
    . /usr/local/etc/bash_completion
 fi

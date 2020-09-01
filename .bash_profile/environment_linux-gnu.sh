@@ -1,5 +1,3 @@
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-
 export DISPLAY=:0
 export HISTCONTROL=$HISTCONTROL:erasedups:ignoredups:ignorespace
 export HISTFILE="$HOME/.bash_history"

@@ -17,10 +17,8 @@ Tools provides a place for custom functions and implementations of third-party t
 
 ## Installed Tools
 - bash-completion
-- brew (Mac OS)
 - fd 
 - fzf
-- linuxbrew (Linux)
 - xquartz (Mac OS)
 - xclip (Mac OS)
 
