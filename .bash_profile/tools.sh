@@ -3,10 +3,6 @@ if [ -f $DOTFILES/.bash_tools/fzf.sh ]; then
     . $DOTFILES/.bash_tools/fzf.sh
 fi
 
-if [ -f /usr/local/etc/bash_completion ]; then
-   . /usr/local/etc/bash_completion
-fi
-
 # Custom Functions
 ## Always `ll` after a `cd`
 cd()
@@ -38,3 +34,8 @@ mkzip()
 	zip -r "${1%%/}.zip" "$1" 
 }                                     
 
+## Remove all environment variables matching pattern
+rmenv()
+{
+unset `env | grep "$1" | egrep -o '^[^=]+'`
+}
