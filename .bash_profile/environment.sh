@@ -14,17 +14,17 @@ export XDG_CONFIG_HOME="$DOTFILES"
 # OS Dependent
 if [[ "$OSTYPE" = "darwin"* ]]; then
 	if [ -f $DOTFILES/.bash_profile/environment_darwin.sh ]; then
-    . $DOTFILES/.bash_profile/environment_darwin.sh
+		. $DOTFILES/.bash_profile/environment_darwin.sh
 	fi
 
 elif [[ "$OSTYPE" = "linux-gnu" ]]; then
 	if [ -f $DOTFILES/.bash_profile/environment_linux-gnu.sh ]; then
-    . $DOTFILES/.bash_profile/environment_linux-gnu.sh
+		. $DOTFILES/.bash_profile/environment_linux-gnu.sh
 	fi
 
 fi
 
-## XDG_CONFIG Dependent
+# XDG_CONFIG Dependent
 export NEOVIM_VIRTUALENV="$XDG_CONFIG_HOME/nvim/env"
 export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/.npm"
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME"
