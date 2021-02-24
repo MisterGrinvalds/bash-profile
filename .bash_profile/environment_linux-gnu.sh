@@ -1,5 +1,8 @@
 export DISPLAY=:0
-export HISTCONTROL=$HISTCONTROL:erasedups:ignoredups:ignorespace
+export FZF_LOCATION="/home/linuxbrew/.linuxbrew/opt/fzf"
+if [[ ! "$HISTCONTROL" == *erasedups:ignoredups:ignorespace* ]]; then
+	export HISTCONTROL=$HISTCONTROL:erasedups:ignoredups:ignorespace
+fi
 export HISTFILE="$HOME/.bash_history"
 export HISTFILESIZE=3000               
 export HISTSIZE=3000                   
