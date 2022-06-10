@@ -1,11 +1,14 @@
 # DOTFILES Dependent
-export DOTFILES="$HOME/.dotfiles"
+export DOTFILES="$HOME"
 export CONDARC="$DOTFILES/.condarc"
 export IPYTHONDIR="$DOTFILES/.ipython"
 export JUPYTER_CONFIG_DIR="$DOTFILES/.jupyter"
 export KAGGLE_CONFIG_DIR="$DOTFILES/.secure/.kaggle"
 export NPM_CONFIG_GLOBALCONFIG="$DOTFILES/.npm/npmrc"
 export NPM_CONFIG_USERCONFIG="$DOTFILES/.npmrc"
+export NVM_DIR="$HOME/.dotfiles/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PYTHONSTARTUP="$DOTFILES/.python/startup.py"
 export R_PROFILE="$DOTFILES/.R/Rprofile.site"
 export R_PROFILE_USER="$DOTFILES/.R/.Rprofile"
@@ -13,13 +16,13 @@ export XDG_CONFIG_HOME="$DOTFILES"
 
 # OS Dependent
 if [[ "$OSTYPE" = "darwin"* ]]; then
-	if [ -f $DOTFILES/.bash_profile/environment_darwin.sh ]; then
-		. $DOTFILES/.bash_profile/environment_darwin.sh
+	if [ -f $DOTFILES/.bash_profile.dir/environment_darwin.sh ]; then
+		. $DOTFILES/.bash_profile.dir/environment_darwin.sh
 	fi
 
 elif [[ "$OSTYPE" = "linux-gnu" ]]; then
-	if [ -f $DOTFILES/.bash_profile/environment_linux-gnu.sh ]; then
-		. $DOTFILES/.bash_profile/environment_linux-gnu.sh
+	if [ -f $DOTFILES/.bash_profile.dir/environment_linux-gnu.sh ]; then
+		. $DOTFILES/.bash_profile.dir/environment_linux-gnu.sh
 	fi
 
 fi

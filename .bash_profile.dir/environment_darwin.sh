@@ -6,6 +6,7 @@ export HISTFILE="$HOME/.bash_history"
 export HISTFILESIZE=3000               
 export HISTSIZE=3000                   
 export LESSHISTFILE="$DOTFILES/.lesshst"
+export ENVS_LOCATION="$HOME/Repos/envs"
 export WGETRC="$DOTFILES/.wgetrc"
 export XDG_CACHE_HOME="$HOME/Library/Caches"
 export XDG_DATA_HOME="$HOME/Library/Application Support"

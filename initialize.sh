@@ -1,29 +1,33 @@
-if [[ "$OSTYPE" = "darwin"* || "$OSTYPE" = "linux-gnu" ]]; then
-	if [ ! -d "$HOME/.dotfiles" ]; then
-		mkdir $HOME/.dotfiles
-	fi
-	
-	export DOTFILES="$HOME/.dotfiles"
-	
-	rsync -avr --exclude=".doc*" --exclude=".git*" --exclude="initialize.sh" --exclude="README.md" ./ "$DOTFILES"
-	
-	if [ -e "$HOME/.bash_profile" ]; then
-		rm -f "$HOME/.bash_profile"
-	fi
-
-	if [ -e "$HOME/.bashrc" ]; then
-		rm -f "$HOME/.bashrc"
-	fi
-	
-	ln $DOTFILES/.bash_profile.sh $HOME/.bash_profile
-
-	valid_responses=('y' 'n')
-	while [[ ! " ${valid_responses[@]} " =~ " $reply " ]]; do
-		echo "Run OS-based install scripts? [y/n]"
-		read reply
+function getResponse() {
+	local OPTIND
+	while getopts ":m:" opt ; do
+			case "$opt" in
+					m )
+							MESSAGE="$OPTARG"
+							;;
+			esac
 	done
+	shift $((OPTIND-1))
 	
-	if [[ $reply = 'y' ]]; then
+	VALID_RESPONSES=('y' 'n')	
+	while [[ ! " ${VALID_RESPONSES[@]} " =~ " $RESPONSE " ]]; do
+		echo "$MESSAGE [y/n]"
+		read RESPONSE
+	done	
+}
+
+if [[ "$OSTYPE" = "darwin"* || "$OSTYPE" = "linux-gnu" ]]; then
+	export DOTFILES="$HOME"
+	
+	rsync -avr \
+		--exclude=".doc*" \
+		--exclude=".git*" \
+		--exclude="initialize.sh" \
+		--exclude="README.md" \
+		./ "$DOTFILES"
+	
+	getResponse -m "Run OS-based install scripts?"
+	if [[ $RESPONSE = 'y' ]]; then
 		if [[ "$OSTYPE" = "darwin"* ]]; then
 			echo "Running Mac Installer Script"
 			brew update

@@ -1,3 +1,4 @@
+#!/bin/bash
 # git
 alias g='git'
 alias gs='git status'                                                           # Used as often as `ls`
@@ -35,6 +36,9 @@ alias tk='tmux kill-ses -t'
 alias tko='tmux kill-session -a'
 alias ti='tmux info'
 alias ts='tmux ls'
+
+# virtualenv
+function venv() { export VENV=$1 && source $ENVS_LOCATION/$VENV/bin/activate ; }
 
 # Xclip
 alias c="xclip"                                                                 # copy to X clipboard (register *)
