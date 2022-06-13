@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # DOTFILES Dependent
 export DOTFILES="$HOME"
 export CONDARC="$DOTFILES/.condarc"
@@ -34,3 +36,10 @@ export NPM_CONFIG_CACHE="$XDG_CACHE_HOME"
 export NVIM_LOG_FILE="$XDG_CACHE_HOME"
 [[ ":$PATH:" != *":$NEOVIM_VIRTUALENV/bin:"* ]] && PATH="${PATH}:$NEOVIM_VIRTUALENV/bin"
 export VIM_PLUGGED="$XDG_CONFIG_HOME/nvim/plugged"
+
+# Load Secrets
+if [ -d "$DOTFILES/.secrets" ]; then
+	for ENV_FILE in "$DOTFILES"/.secrets/*; do
+		export $(echo $(cat $ENV_FILE | sed 's/#.*//g'| xargs) | envsubst)
+	done
+fi
