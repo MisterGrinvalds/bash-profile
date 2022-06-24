@@ -1,4 +1,7 @@
 #!/bin/bash
+# bash
+alias bash='bash && source ~/.bash_profile'
+
 # git
 alias g='git'
 alias gs='git status'                                                           # Used as often as `ls`
