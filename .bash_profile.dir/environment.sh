@@ -8,7 +8,7 @@ export JUPYTER_CONFIG_DIR="$DOTFILES/.jupyter"
 export KAGGLE_CONFIG_DIR="$DOTFILES/.secure/.kaggle"
 export NPM_CONFIG_GLOBALCONFIG="$DOTFILES/.npm/npmrc"
 export NPM_CONFIG_USERCONFIG="$DOTFILES/.npmrc"
-export NVM_DIR="$HOME/.dotfiles/nvm"
+export NVM_DIR="$DOTFILES/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PYTHONSTARTUP="$DOTFILES/.python/startup.py"
