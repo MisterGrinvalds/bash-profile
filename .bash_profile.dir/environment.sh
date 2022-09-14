@@ -6,10 +6,6 @@ export CONDARC="$DOTFILES/.condarc"
 export IPYTHONDIR="$DOTFILES/.ipython"
 export JUPYTER_CONFIG_DIR="$DOTFILES/.jupyter"
 export KAGGLE_CONFIG_DIR="$DOTFILES/.secure/.kaggle"
-export NPM_CONFIG_GLOBALCONFIG="$DOTFILES/.npm/npmrc"
-export NPM_CONFIG_USERCONFIG="$DOTFILES/.npmrc"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PYTHONSTARTUP="$DOTFILES/.python/startup.py"
 export R_PROFILE="$DOTFILES/.R/Rprofile.site"
 export R_PROFILE_USER="$DOTFILES/.R/.Rprofile"
@@ -29,9 +25,10 @@ elif [[ "$OSTYPE" = "linux-gnu" ]]; then
 fi
 
 # XDG_CONFIG Dependent
+#export NPM_CONFIG_GLOBALCONFIG="$DOTFILES/.npm/npmrc"
+#export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/.npm"
+#export NPM_CONFIG_CACHE="$XDG_CACHE_HOME"
 export NEOVIM_VIRTUALENV="$XDG_CONFIG_HOME/nvim/env"
-export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/.npm"
-export NPM_CONFIG_CACHE="$XDG_CACHE_HOME"
 export NVIM_LOG_FILE="$XDG_CACHE_HOME"
 [[ ":$PATH:" != *":$NEOVIM_VIRTUALENV/bin:"* ]] && PATH="${PATH}:$NEOVIM_VIRTUALENV/bin"
 export VIM_PLUGGED="$XDG_CONFIG_HOME/nvim/plugged"
