@@ -5,5 +5,4 @@ function mkvenv() {
 	else
 		export VENV=$1 && python3 -m virtualenv $ENVS_LOCATION/$VENV
 	fi
-	  ; 
 }
