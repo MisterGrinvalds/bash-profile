@@ -40,10 +40,6 @@ alias tko='tmux kill-session -a'
 alias ti='tmux info'
 alias ts='tmux ls'
 
-# virtualenv
-function mkvenv() { export VENV=$1 && python3 -m virtualenv $ENVS_LOCATION/$VENV ; }
-function venv() { export VENV=$1 && source $ENVS_LOCATION/$VENV/bin/activate ; }
-
 # Xclip
 alias c="xclip"                                                                 # copy to X clipboard (register *)
 alias cs="xclip -selection clipboard"                                           # copy to system wide clipboard (register +)
