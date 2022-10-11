@@ -32,13 +32,18 @@ if [[ "$OSTYPE" = "darwin"* || "$OSTYPE" = "linux-gnu" ]]; then
 			echo "Running Mac Installer Script"
 			brew update
 			brew cask install xquartz
-			brew install bash-completion fd fzf xclip
+			brew install bash-completion 
+			brew install fd 
+			brew install fzf 
+			brew install xclip
 		fi
 
 		if [[ $OSTYPE = "linux-gnu" ]]; then
 			echo "Running Linux Installer Script"
 			sudo apt-get update
-			sudo apt-get install bash-completion fd-find fzf
+			sudo apt-get install bash-completion 
+			sudo apt-get install fd-find 
+			sudo apt-get install fzf
 		fi
 	fi
 fi
