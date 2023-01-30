@@ -10,8 +10,8 @@ export LESSHISTFILE="$DOTFILES/.lesshst"
 export ENVS_LOCATION="$HOME/envs"
 export PATH="$HOMEBREW_BIN_PATH:$PATH"
 export WGETRC="$DOTFILES/.wgetrc"
-export XDG_CACHE_HOME="$HOME/Library/Caches"
-export XDG_DATA_HOME="$HOME/Library/Application Support"
+#export XDG_CACHE_HOME="$HOME/Library/Caches"
+#export XDG_DATA_HOME="$HOME/Library/Application Support"
 if [ -f "/Library/Frameworks/R.framework/Resources/etc/Rprofile.site" ] && [ ! -L "/Library/Frameworks/R.framework/Resources/etc/Rprofile.site" ]; then
 	ln -s "$DOTFILES/.R/Rprofile.site" "/Library/Frameworks/R.framework/Resources/etc/"
 fi
