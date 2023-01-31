@@ -9,7 +9,7 @@ export KAGGLE_CONFIG_DIR="$DOTFILES/.secure/.kaggle"
 export PYTHONSTARTUP="$DOTFILES/.python/startup.py"
 export R_PROFILE="$DOTFILES/.R/Rprofile.site"
 export R_PROFILE_USER="$DOTFILES/.R/.Rprofile"
-export XDG_CONFIG_HOME="$DOTFILES"
+#export XDG_CONFIG_HOME="$DOTFILES"
 
 # OS Dependent
 if [[ "$OSTYPE" = "darwin"* ]]; then
@@ -28,10 +28,10 @@ fi
 #export NPM_CONFIG_GLOBALCONFIG="$DOTFILES/.npm/npmrc"
 #export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/.npm"
 #export NPM_CONFIG_CACHE="$XDG_CACHE_HOME"
-export NEOVIM_VIRTUALENV="$XDG_CONFIG_HOME/nvim/env"
-export NVIM_LOG_FILE="$XDG_CACHE_HOME"
+export NEOVIM_VIRTUALENV="$HOME/nvim/env"
+export NVIM_LOG_FILE="$HOME"
 [[ ":$PATH:" != *":$NEOVIM_VIRTUALENV/bin:"* ]] && PATH="${PATH}:$NEOVIM_VIRTUALENV/bin"
-export VIM_PLUGGED="$XDG_CONFIG_HOME/nvim/plugged"
+export VIM_PLUGGED="$HOME/nvim/plugged"
 
 # Load Secrets
 if [ -d "$DOTFILES/.secrets" ]; then
