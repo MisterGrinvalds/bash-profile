@@ -9,7 +9,7 @@ export KAGGLE_CONFIG_DIR="$DOTFILES/.secure/.kaggle"
 export PYTHONSTARTUP="$DOTFILES/.python/startup.py"
 export R_PROFILE="$DOTFILES/.R/Rprofile.site"
 export R_PROFILE_USER="$DOTFILES/.R/.Rprofile"
-#export XDG_CONFIG_HOME="$DOTFILES"
+export XDG_CONFIG_HOME="$DOTFILES"
 
 # OS Dependent
 if [[ "$OSTYPE" = "darwin"* ]]; then
